@@ -1,0 +1,247 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css\signup2.css' %}">
+  </head>
+  <body>
+
+    <div class="bell">
+
+      <div class="bell-border"></div>
+
+      <i class="fas fa-bell btn-bell"></i>
+
+    </div>
+      
+      
+    <form action="" method="post" style="position: fixed;top: 50px; bottom: 50px; ">
+      {% csrf_token %}
+     
+       <div class="card" style="border: none; background-color: #f8f7f7;">
+        
+        <div style="position: relative; margin-left: 11px;">
+          <h1 class="text "style="color: rgb(55, 69, 109);text-shadow: 2px 1px  #000000; font-family: cursive; position:relative; margin-left:19px">Sign up</h1><br>
+        </div>
+        
+            <div>
+              {{form.first_name.errors}}
+              <label for="{{form.first_name.id_for_label}}" style="font-family: inherit; ">First Name</label>
+              {{form.first_name}}
+
+            </div>
+            
+            <div>
+              {{form.last_name.errors}}
+              <label for="{{form.last_name.id_for_label}}" style="font-family: inherit;">Last Name</label>
+              {{form.last_name}}
+
+            </div>
+            <div>
+              {{form.username.errors}}
+              <label for="{{form.username.id_for_label}}" style="font-family: inherit;">Username</label>
+              {{form.username}}
+            </div>
+            <div>
+              {{form.password1.errors}}
+              <label for="{{form.password1.id_for_label}}" style="font-family: inherit;">Password</label>
+              {{form.password1}}
+            </div>
+            <div>
+                {{form.password2.errors}}
+                <label for="{{form.password2.id_for_label}}" style="font-family: inherit;"> Password Confirmation</label>
+                {{form.password2}}
+            </div><br>
+            
+                
+           <div class="btn" style="position: relative; margin-left:20px;margin-bottom: 4px ;">
+             <button style="display:block; position: relative; margin-bottom: 4px; " >Sign up
+                <span></span>
+             </button>
+           </div>
+           
+            <p style="font-size: 11px;">Already have an account ?<a href="{% url 'signin' %}" style="position: relative; width: 250px; margin-left: 30px; font-size: 14px; padding-top: 1px;"> Sign in</a></p>
+            
+        
+
+            
+        
+
+       
+    </div>
+    </form>
+
+    <style>
+      .bell, .bell-border, .btn-bell {
+
+border-radius: 20%;
+
+position: absolute;
+
+top: 50%;
+
+left: 50%;
+
+transform: translate(-50%, -50%);
+
+}
+
+.bell {
+
+height: 40px; 
+
+width: 40px;
+position: fixed;
+left: 736px;
+top: 530px;
+
+box-shadow: -1px 2px 10px #999;
+
+background: rgb(7, 24, 73);
+animation-name: col;
+
+animation-duration: 2s;
+
+animation-iteration-count: infinite;
+
+}
+
+.bell-border {
+
+height: 40px; 
+
+width: 40px;
+
+border: 1px solid rgb(7, 24, 73)!important;
+
+animation-name: bord-pop;
+
+animation-duration: 2s;
+
+animation-iteration-count: infinite;
+
+box-shadow: 2px 2px 5px #ccc, -2px -2px 5px #ccc;
+
+}
+
+.btn-bell {
+
+color: white;
+
+font-size: 20px;
+
+animation-name: bell-ring;
+
+animation-duration: 2s;
+
+animation-iteration-count: infinite;
+
+}
+
+@keyframes bord-pop {
+
+0% {
+
+    transform: translate(-50%, -50%);
+
+}
+
+50% {
+
+    transform: translate(-50%, -50%) scale(1.9);
+
+    opacity: 0.1;
+
+}
+
+100% {
+
+    transform: translate(-50%, -50%) scale(1.9);
+
+    opacity: 0;
+
+}
+
+}
+
+@keyframes col {
+
+0% {
+
+    transform: scale(1) translate(0,0);
+
+}
+
+10% {
+
+    transform: scale(1.1) translate(0,0);
+
+}
+
+75% {
+
+    transform: scale(1) translate(0,0);
+
+}
+
+100% {
+
+    transform: scale(1) translate(0,0);
+
+}
+
+}
+
+@keyframes bell-ring {
+
+0% {
+
+    transform: translate(-50%, -50%);
+
+}
+
+5%, 15% {
+
+    transform: translate(-50%, -50%) rotate(25deg);
+
+}
+
+10%, 20% {
+
+    transform: translate(-50%, -50%) rotate(-25deg);
+
+}
+
+25%  {
+
+    transform: translate(-50%, -50%) rotate(0deg);
+
+}
+
+100% {
+
+    transform: translate(-50%, -50%) rotate(0deg);
+
+}
+
+}
+    
+    </style>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

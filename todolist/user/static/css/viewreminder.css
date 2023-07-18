@@ -1,0 +1,94 @@
+
+.card {
+
+    width: 300px;
+    height: 180px;
+    position: relative;
+    margin-left: 500px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: 4px solid rgb(7, 24, 73);
+
+    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(190, 190, 190),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+    
+    
+
+}
+.cssbuttons-io-button {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    padding-bottom: 2px;
+    background-color: #608cc1;
+    
+    
+    border: none;
+    box-shadow: 0 0.7em 1.5em -0.5em #2d54a498;
+    letter-spacing: 0.05em;
+    border-radius: 20px;
+    position: relative;
+    margin-left: 668px;
+    margin-top: 30px;
+    width: 120px;
+    height: 45px;
+
+  
+  
+}
+.cssbuttons-io-button span{
+    position: relative;
+    padding-left: 7px;
+    
+}
+  
+.cssbuttons-io-button svg {
+    margin-right: 6px;
+}
+  
+.cssbuttons-io-button:hover {
+    box-shadow: 0 0.5em 2em -0.5em #3b3fc198;
+    
+    cursor: pointer;
+    background-color: #217093;
+    color: rgb(255, 255, 255);
+    width: 120px;
+   
+}
+
+  
+.cssbuttons-io-button:active {
+    box-shadow: 0 0.3em 1em -0.5em #00000098;
+}
+p{
+    border-radius: 10px;
+}
+a {
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    padding-left: 15px;
+    padding-top: 14px;
+    
+}
+
+a:hover {
+    color:#ffffff; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+.text{
+    font-size: 20px;
+}
+.text span{
+    font-size: 25px;
+    
+}
+
+
+
+
+

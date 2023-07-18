@@ -1,0 +1,103 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css\signin2.css' %}">
+  </head>
+  <body>
+
+
+    
+    <div class="container">
+
+
+
+
+      
+     <form action="" method="post" class="form" style="box-shadow: -1px 0px 25px 0px #00000069;">
+        {% csrf_token %}
+        
+        {% for i in messages %}
+        {% if i.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <div class="alert alert-info">
+              <p>{{i}}</p>
+            </div>
+            {% endif %}
+    
+        {% if i.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            <div class="alert alert-danger">
+              <p>{{i}}</p>
+            </div>
+            {% endif %}
+        {% endfor %}
+        <h1 class="text-center"style="color: rgb(55, 69, 109);text-shadow: 2px 1px  #000000; font-family: cursive;">Sign in</h1>
+        <br>
+            <div class="Group" >
+                <label for="username" style="font-size: 15px; " id="a1">{{form.username}}</label>
+                
+            </div>
+            <div class="Group">
+                <label for="Password" style="font-size: 15px; " id="a2">{{form.password}}</label>
+                
+            </div>
+            <div class="Group">
+                <button type="submit" class="btn" id="a3">Sign in</button>
+            </div>
+            <div class="Group2">
+                <p>Don't have an account ?</p>
+                <a href="{% url 'signup' %}" style="position: relative; width: 250px; margin-left: 30px;"> + Sign up</a>
+            </div>
+            
+
+
+     </form>
+    </div>
+  
+    
+
+
+    <style>
+      #a1 {
+    margin-bottom: 2em;
+    filter: blur(0)
+    
+    
+}
+#a1:hover{
+    filter: blur(0);
+
+}
+#a2 {
+    margin-bottom: 2em;
+    filter: blur(0)
+    
+}
+#a2:hover{
+    filter: blur(0);
+
+}
+.Group2{
+    position: relative;
+    margin-left: 20px;
+    margin-top: 13px;
+}
+
+
+    </style>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
